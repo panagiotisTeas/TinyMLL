@@ -10,7 +10,13 @@
 
 typedef enum TinyMLLErrorCode
 {
-    TINYMLL_OK = 0
+    TINYMLL_OK = 0,                 // everythings ok
+    // Allocation Errors
+    TINYMLL_ALLOCATION_FAILED,      // some allocation function (malloc, ...) returned a null pointer instead of an address
+    TINYMLL_ALLOCATION_ZERO_SIZE,   // allocation of a zero size block of memory
+    TINYMLL_ALLOCATION_ALIGNMENT,   // allication alignment is not a power of 2
+    // General Errors
+    TINYMLL_NULL_PTR,               // null pointer passed as a parameter
 } TinyMLLErrorCode;
 
 typedef struct TinyMLLError
