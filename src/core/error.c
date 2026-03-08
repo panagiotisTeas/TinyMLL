@@ -12,7 +12,7 @@ tinymll_set_error(Error** error, ErrorCode code, const char* message, ...)
 {
     if (error == NULL) return;
 
-    if (*error != NULL) amll_clear_error(error);
+    if (*error != NULL) tinymll_clear_error(error);
 
     *error = (Error*)malloc(sizeof(Error));
     if (*error == NULL) exit(EXIT_FAILURE);
