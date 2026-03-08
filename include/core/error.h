@@ -14,9 +14,11 @@ typedef enum TinyMLLErrorCode
     // Allocation Errors
     TINYMLL_ALLOCATION_FAILED,      // some allocation function (malloc, ...) returned a null pointer instead of an address
     TINYMLL_ALLOCATION_ZERO_SIZE,   // allocation of a zero size block of memory
+    TINYMLL_ALLOCATION_OVERFLOW,    // allocation exceeds buffer size
     TINYMLL_ALLOCATION_ALIGNMENT,   // allication alignment is not a power of 2
     // General Errors
     TINYMLL_NULL_PTR,               // null pointer passed as a parameter
+    TINYMLL_UNSUPPORTED,            // trying to call an unsupported functionality
 } TinyMLLErrorCode;
 
 typedef struct TinyMLLError

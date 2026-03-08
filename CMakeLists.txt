@@ -42,6 +42,8 @@ message(STATUS "Building TinyMLL library ...")
 
 # Sources
 set(TINYMLL_SOURCES
+    src/core/allocator.c
+    src/core/arena.c
     src/core/error.c
     src/core/random.c
 )

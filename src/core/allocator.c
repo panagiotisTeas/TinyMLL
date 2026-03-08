@@ -11,7 +11,7 @@ tinymll__clib_malloc(u64 size, void* ctx, Error** error)
 
     if (size == 0)
     {
-        set_error(
+        tinymll_set_error(
             error,
             TINYMLL_ALLOCATION_ZERO_SIZE,
             ""
@@ -22,7 +22,7 @@ tinymll__clib_malloc(u64 size, void* ctx, Error** error)
     void* ptr = malloc(size);
     if (ptr == NULL)
     {
-        set_error(
+        tinymll_set_error(
             error,
             TINYMLL_ALLOCATION_FAILED,
             ""
@@ -40,7 +40,7 @@ tinymll__clib_aligned_alloc(u64 alignment, u64 size, void* ctx, Error** error)
 
     if (size == 0)
     {
-        set_error(
+        tinymll_set_error(
             error,
             TINYMLL_ALLOCATION_ZERO_SIZE,
             ""
@@ -50,7 +50,7 @@ tinymll__clib_aligned_alloc(u64 alignment, u64 size, void* ctx, Error** error)
 
     if (alignment == 0 || (alignment & (alignment - 1)) != 0)
     {
-        set_error(
+        tinymll_set_error(
             error,
             TINYMLL_ALLOCATION_ALIGNMENT,
             ""
@@ -61,7 +61,7 @@ tinymll__clib_aligned_alloc(u64 alignment, u64 size, void* ctx, Error** error)
     void* ptr = aligned_alloc(alignment, size);
     if (ptr == NULL)
     {
-        set_error(
+        tinymll_set_error(
             error,
             TINYMLL_ALLOCATION_FAILED,
             ""
@@ -79,7 +79,7 @@ tinymll__clib_realloc(void* ptr, u64 size, void* ctx, Error** error)
 
     if (size == 0)
     {
-        set_error(
+        tinymll_set_error(
             error,
             TINYMLL_ALLOCATION_ZERO_SIZE,
             ""
@@ -89,7 +89,7 @@ tinymll__clib_realloc(void* ptr, u64 size, void* ctx, Error** error)
 
     if (ptr == NULL)
     {
-        set_error(
+        tinymll_set_error(
             error,
             TINYMLL_NULL_PTR,
             ""
@@ -100,7 +100,7 @@ tinymll__clib_realloc(void* ptr, u64 size, void* ctx, Error** error)
     void* new_ptr = realloc(ptr, size);
     if (new_ptr == NULL)
     {
-        set_error(
+        tinymll_set_error(
             error,
             TINYMLL_ALLOCATION_FAILED,
             ""
@@ -118,7 +118,7 @@ tinymll__clib_free(void* ptr, void* ctx, Error** error)
 
     if (ptr == NULL)
     {
-        set_error(
+        tinymll_set_error(
             error,
             TINYMLL_NULL_PTR,
             ""

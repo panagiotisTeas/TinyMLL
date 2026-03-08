@@ -23,6 +23,10 @@ typedef double      f64;
 
 typedef uintptr_t   uptr;
 
+#define KiB(x) (u64)((x) << 10)
+#define MiB(x) (u64)((x) << 20)
+#define GiB(x) (u64)((x) << 30)
+
 #define TINYMLL_TRUE   1
 #define TINYMLL_FALSE  0
 
