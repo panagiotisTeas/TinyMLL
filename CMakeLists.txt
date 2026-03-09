@@ -48,7 +48,7 @@ set(TINYMLL_SOURCES
     src/core/random.c
     src/core/tensor.c
 
-    utils/tensor_checks.c
+    src/utils/tensor_checks.c
 )
 
 # Backend sources and definitions
@@ -86,3 +86,9 @@ target_compile_options(tinymll PRIVATE
 
 message(STATUS "===============================")
 message(STATUS "")
+
+# Tests
+option(BUILD_TESTS "Build AMLL tests" ON)
+if(${BUILD_TESTS})
+    add_subdirectory(tests)
+endif()

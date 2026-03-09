@@ -53,6 +53,7 @@ Allocator* tinymll__get_global_arena_allocator(void);
 #define create_arena_allocator      tinymll_create_arena_allocator
 
 #define set_global_arena_allocator  tinymll_set_global_arena_allocator
+#define get_global_arena_allocator  tinymll__get_global_arena_allocator
 
 #define arena_malloc                tinymll_arena_malloc
 #define arena_aligned_alloc         tinymll_arena_aligned_alloc
