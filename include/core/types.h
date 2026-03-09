@@ -1,5 +1,5 @@
-#ifndef AMLL_TYPES_H
-#define AMLL_TYPES_H
+#ifndef TINYMLL_TYPES_H
+#define TINYMLL_TYPES_H
 
 #include <stdint.h>
 
@@ -30,4 +30,4 @@ typedef uintptr_t   uptr;
 #define TINYMLL_TRUE   1
 #define TINYMLL_FALSE  0
 
-#endif // AMLL_TYPES_H
+#endif // TINYMLL_TYPES_H

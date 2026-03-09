@@ -46,6 +46,9 @@ set(TINYMLL_SOURCES
     src/core/arena.c
     src/core/error.c
     src/core/random.c
+    src/core/tensor.c
+
+    utils/tensor_checks.c
 )
 
 # Backend sources and definitions
