@@ -54,7 +54,9 @@ set(TINYMLL_SOURCES
 # Backend sources and definitions
 message(STATUS "TinyMLL Backend:   ${TINYMLL_BACKEND}")
 if(TINYMLL_BACKEND STREQUAL "CPU_NAIVE")
-    set(TINYMLL_BACKEND_SOURCES)
+    set(TINYMLL_BACKEND_SOURCES
+        src/backend/cpu/tensor_arithmetic.c
+    )
     set(TINYMLL_BACKEND_DEFS ${TINYMLL_BACKEND})
 
 elseif(TINYMLL_BACKEND STREQUAL "CPU_SIMD")
